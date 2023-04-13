@@ -75,6 +75,7 @@ pipeline {
                 script{echo 'deploying the application...'
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh "echo ${PASSWORD} | docker login -u ${USERNAME} --password-stdin"
+                    sh "docker tag ${IMAGE_NAME} deep20it155/cicddemo:${IMAGE_NAME}"
                     sh "docker push deep20it155/cicddemo:${IMAGE_NAME}"
                 }}
 
