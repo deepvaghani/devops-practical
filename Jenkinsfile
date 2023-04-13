@@ -7,10 +7,10 @@ pipeline {
     }
 
     
-//     parameters {
-//         choice(name: 'VERSION', choices:['1','2', '3'], description: '')
-//         booleanParam(name: 'executeTest', defaultValue : true, description: '')
-//     }
+    parameters {
+        choice(name: 'VERSION', choices:['1','2', '3'], description: '')
+        booleanParam(name: 'executeTest', defaultValue : true, description: '')
+    }
     
     tools{
         maven 'maven-3.9.0'
